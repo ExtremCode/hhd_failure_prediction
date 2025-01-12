@@ -1,11 +1,11 @@
 FROM python:3.10-slim
 
-RUN python -m pip install --no-cache-dir flask flask-cors joblib gunicorn numpy scikit-learn==1.6.0
+RUN python -m pip install --no-cache-dir flask flask-cors joblib gunicorn numpy xbgoost
 
 WORKDIR /app
 
 ADD server.py server.py
-ADD fitted_random_forest.pkl fitted_random_forest.pkl
+ADD fitted_xgb.pkl fitted_xgb.pkl
 
 EXPOSE 5000
 
